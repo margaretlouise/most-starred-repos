@@ -1,7 +1,10 @@
 import React from "react";
 
+// components
+import RepoListContainer from "./components/containers/repoListContainer.js";
+
 const App = () => {
-  return <div>taco</div>;
+  return <RepoListContainer />;
 };
 
 export default App;
