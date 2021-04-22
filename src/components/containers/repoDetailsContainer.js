@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+// shared components
+import LoadingSpinner from '../shared/loading';
+import Error from '../shared/error';
+import Header from '../shared/header';
+
 // feature components
 import RepoDetails from '../features/details';
 
@@ -34,14 +39,21 @@ const RepoDetailsContainer = () => {
       });
   }, [owner, repo]);
 
-  console.log(commitData);
-
   if (!hasLoaded) {
-    return <div>Loading</div>;
+    return <LoadingSpinner />;
+    // Handle network failures
   } else if (error) {
-    return <div>Error</div>;
+    return <Error />;
+    // Handle errors from our API call
+  } else if (commitData.message) {
+    return <Error errorMessage={commitData.message} />;
   } else {
-    return <RepoDetails name={repo} owner={owner} commits={commitData} />;
+    return (
+      <div>
+        <Header view="details" />
+        <RepoDetails name={repo} owner={owner} commits={commitData} />
+      </div>
+    );
   }
 };
 

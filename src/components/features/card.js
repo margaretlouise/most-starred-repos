@@ -5,7 +5,7 @@ const RepoCard = (props) => {
   const { name, starCount, description, url, owner } = props;
   return (
     <div>
-      <h3>{name}</h3>
+      <h4>{name}</h4>
       <ul>
         <li>Star Count: {starCount}</li>
         <li>Description: {description}</li>

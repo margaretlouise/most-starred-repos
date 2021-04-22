@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+// shared components
+import LoadingSpinner from '../shared/loading';
+import Error from '../shared/error';
+import Header from '../shared/header';
+
 // feature components
 import RepoList from '../features/list';
 
@@ -27,11 +32,20 @@ const RepoListContainer = () => {
   }, []);
 
   if (!hasLoaded) {
-    return <div>Loading</div>;
+    return <LoadingSpinner />;
+    // Handle network failures
   } else if (error) {
-    return <div>Error</div>;
+    return <Error />;
+    // Handle errors from our API call
+  } else if (repoData.message) {
+    return <Error errorMessage={repoData.message} />;
   } else {
-    return <RepoList repos={repoData.items} />;
+    return (
+      <div>
+        <Header view="list" />
+        <RepoList repos={repoData.items} />;
+      </div>
+    );
   }
 };
 

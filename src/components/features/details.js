@@ -5,10 +5,10 @@ const RepoDetails = (props) => {
 
   return (
     <div>
-      <h1>Repo Name: {name}</h1>
-      <h2>Repo Owner: {owner}</h2>
+      <h2>Repo Name: {name}</h2>
+      <h3>Repo Owner: {owner}</h3>
       <div>
-        <h3>Latest Commits</h3>
+        <h4>Latest Commits</h4>
         {commits.map((commit) => {
           return (
             <div key={commit.sha}>

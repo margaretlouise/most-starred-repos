@@ -23,10 +23,12 @@ React App using the GitHub API to display the top 100 most starred repos.
 
 ### Learnings
 
-- The detail path and view for the list of recent commits is, upon further reflection, at least a little overkill. I had spent some time thinking through the UI before implementation, and had envisioned very long lists of commits. When I built it out, I found that many repos didn't even have commits within the last 24 hours - but there was a huge variation in the length of this data. If I had more time, I think I would have tried implementing this view as a pop out modal.
+- The detail path/view for the list of recent commits is, upon further reflection, at least a little overkill. I had spent some time thinking through the UI before implementation, and had envisioned very long lists of commits. When I built it out, I found that many repos didn't even have commits within the last 24 hours - but there was a huge variation in the length of this data, so it _was_ still a tricky UI decision. If I had more time, I would have experimented with a modal view.
 
 ### Next Time
 
+- #1 top Priority: don't refetch the list data when we go back!
+- Move API hubbub into a seperate file
 - Add pagination
 - Write more tests
 - More robust error handling (try out Axios?)
