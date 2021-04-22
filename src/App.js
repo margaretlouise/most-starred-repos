@@ -10,7 +10,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/">
-          <RepoListContainer />;
+          <RepoListContainer />
         </Route>
         <Route path="/details/:owner/:repo">
           <RepoDetailsContainer />

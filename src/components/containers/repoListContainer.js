@@ -43,7 +43,7 @@ const RepoListContainer = () => {
     return (
       <div>
         <Header view="list" />
-        <RepoList repos={repoData.items} />;
+        <RepoList repos={repoData.items} />
       </div>
     );
   }
