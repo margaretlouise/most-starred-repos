@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // components
-import RepoCard from "./card";
+import RepoCard from './card';
 
 const RepoList = (props) => {
   const { repos } = props;
@@ -16,7 +16,9 @@ const RepoList = (props) => {
             key={repo.id}
             name={repo.name}
             starCount={repo.stargazers_count}
-            url={repo.url}
+            description={repo.description}
+            url={repo.html_url}
+            owner={repo.owner.login}
           />
         );
       })}

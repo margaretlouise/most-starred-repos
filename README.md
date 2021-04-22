@@ -1,6 +1,6 @@
 # Top 100 Most Starred GitHub Repos
 
-- This project was bootstrapped with create-react-app
+React App using the GitHub API to display the top 100 most starred repos.
 
 ## Want to run the project locally?
 
@@ -15,4 +15,18 @@
 
 ### Getting Crisp
 
+- This project was bootstrapped with `create-react-app`
+
+- And I added a few tools that didn't come out of the box with Create React App:
+  -- Prettier
+  -- React-Router-Dom
+
 ### Learnings
+
+- The detail path and view for the list of recent commits is, upon further reflection, at least a little overkill. I had spent some time thinking through the UI before implementation, and had envisioned very long lists of commits. When I built it out, I found that many repos didn't even have commits within the last 24 hours - but there was a huge variation in the length of this data. If I had more time, I think I would have tried implementing this view as a pop out modal.
+
+### Next Time
+
+- Add pagination
+- Write more tests
+- More robust error handling (try out Axios?)
