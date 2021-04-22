@@ -4,7 +4,7 @@ const Error = (props) => {
   const { errorMessage } = props;
 
   return (
-    <div>
+    <div className="error">
       <h3>
         Dang, something isn't working quite right. Try refreshing or come back
         later.

@@ -35,7 +35,7 @@ const RepoListContainer = () => {
     return <LoadingSpinner />;
     // Handle network failures
   } else if (error) {
-    return <Error />;
+    return <Error errorMessage={error.message} />;
     // Handle errors from our API call
   } else if (repoData.message) {
     return <Error errorMessage={repoData.message} />;

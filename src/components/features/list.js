@@ -9,7 +9,7 @@ const RepoList = (props) => {
   if (!repos || repos.length === 0) return <p>No repos found</p>;
 
   return (
-    <div>
+    <div className="repo-container">
       {repos.map((repo) => {
         return (
           <RepoCard
